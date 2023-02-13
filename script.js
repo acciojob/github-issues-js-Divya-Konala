@@ -16,7 +16,7 @@ getIssue();
 let displayIssue = (data) => {
     main.innerHTML="";
     let pageNum = document.createElement("p");
-    pageNum.textContent = `Page Number: ${pageNumberHere}`;
+    pageNum.textContent = `Page number ${pageNumberHere}`;
     let prev = document.createElement("button");
     prev.textContent = "Previous Page";
     prev.id="load_prev";
@@ -33,9 +33,10 @@ let displayIssue = (data) => {
 
   main.append(pageNum,ol,prev, next);
     prev.addEventListener("click", () => {
-        if(pageNumberHere>1)
+        if(pageNumberHere>1){
             pageNumberHere--;
-      getIssue();
+            getIssue();
+        }
     });
     next.addEventListener("click", () => {
       pageNumberHere++;
